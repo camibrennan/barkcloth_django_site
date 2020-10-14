@@ -1,23 +1,23 @@
-import utils
+# This is all boilerplate, don't touch this file for now!
 import sys
+import os
+from django.conf import settings
+from django.core.management import execute_from_command_line
 
-print('Usage:')
-print('Rebuild site: python manage.py build')
-print('Create new page: python manage.py new')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-print("This is argv:", sys.argv)
-command = sys.argv[1]
-print(command)
-if command == "build":
-    print("Build was specified")
-    utils.main()
-    print('Build complete!')
-elif command == "new":
-    print("New page was specified")
-    utils.create_new_page()
-    print('New Page added!')
+settings.configure(
+    DEBUG=True,
+    ROOT_URLCONF='urls',
+    STATIC_URL='static/',
+    STATIC_ROOT=os.path.join(BASE_DIR, 'static'),
+    INSTALLED_APPS=[
+        'django.contrib.staticfiles',
+    ],
+    TEMPLATES=[{
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    }],
+)
 
-else:
-    print("Please specify 'build' or 'new'")
-
-
+execute_from_command_line(sys.argv)
