@@ -15,7 +15,7 @@ def blog(request):
     blog_html = open("content/blog.html").read()
     context = {
     "content": blog_html,
-    "title": "My Blog",
+    "title": "Blog",
     }
     return render(request, "base.html", context)
 
