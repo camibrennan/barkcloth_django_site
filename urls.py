@@ -3,9 +3,9 @@ from django.urls import path
 import views
 
 urlpatterns = [
-    path('index.html', views.index),
-    path('blog.html', views.blog),
-    path('purchase.html', views.purchase),
+    path(' ', views.index),
+    path('blog', views.blog),
+    path('purchase', views.purchase),
 ]
 
 # Boilerplate to include static files
