@@ -11,7 +11,7 @@ settings.configure(
     ROOT_URLCONF='urls',
     STATIC_URL='static/',
     STATIC_ROOT=os.path.join(BASE_DIR, 'static'),
-    ALLOWED_HOSTS= ['localhost', '127.0.0.1', '[::1]'],
+    ALLOWED_HOSTS= ['tranquil-caverns-16220.herokuapp.com'],
     INSTALLED_APPS=[
         'django.contrib.staticfiles',
     ],
