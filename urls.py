@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index),
     path('blog', views.blog),
     path('purchase', views.purchase),
+    path('send-email', views.send_email),
 ]
 
 # Boilerplate to include static files
